@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler, IEndDragHandler {
 
     bool isDrag = false;
-    [SerializeField] float maxMoveSpeed = 25;
+    [SerializeField] float maxMoveSpeed = 10;
     public float MaxMoveSpeed { get { return maxMoveSpeed; } set { maxMoveSpeed = value; } }
     [SerializeField] float smoothTime = 0.3f;
     Vector2 currentVelocity;

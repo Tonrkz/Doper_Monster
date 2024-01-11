@@ -15,7 +15,7 @@ public class MovingPlayer : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     }
 
     void Update() {
-        if (isDrag) {
+        if (isDrag && GetComponent<PlayerManager>().HP > 0) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
         }

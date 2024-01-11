@@ -17,6 +17,7 @@ public class DessertManager : MonoBehaviour {
     [SerializeField] int point = 0;
     public int Point { get { return point; } set { point = value; } }
     [SerializeField] DessertType type;
+    public DessertType Type { get { return type; } }
     [SerializeField] float timeExists;
 
     void Start() {
@@ -25,13 +26,6 @@ public class DessertManager : MonoBehaviour {
 
     void Update() {
         SetupDessert(type);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.GetComponent<PlayerManager>() != null) {
-            collision.GetComponent<PlayerManager>().Score += point;
-            Destroy(gameObject);
-        }
     }
 
     void SetupDessert(DessertType type) {

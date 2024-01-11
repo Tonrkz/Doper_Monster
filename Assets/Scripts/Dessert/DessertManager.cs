@@ -27,6 +27,13 @@ public class DessertManager : MonoBehaviour {
         SetupDessert(type);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.GetComponent<PlayerManager>() != null) {
+            collision.GetComponent<PlayerManager>().Score += point;
+            Destroy(gameObject);
+        }
+    }
+
     void SetupDessert(DessertType type) {
         SpriteRenderer rdr = GetComponent<SpriteRenderer>();
         switch (type) {

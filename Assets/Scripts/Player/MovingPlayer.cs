@@ -7,6 +7,7 @@ public class MovingPlayer : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     bool isDrag = false;
     [SerializeField] float maxMoveSpeed = 10;
+    public float MaxMoveSpeed { get { return maxMoveSpeed; } set { maxMoveSpeed = value; } }
     [SerializeField] float smoothTime = 0.3f;
     Vector2 currentVelocity;
 

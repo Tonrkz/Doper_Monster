@@ -21,11 +21,10 @@ public class DessertManager : MonoBehaviour {
     [SerializeField] float timeExists;
 
     void Start() {
-
+        SetupDessert(type);
     }
 
     void Update() {
-        SetupDessert(type);
     }
 
     void SetupDessert(DessertType type) {

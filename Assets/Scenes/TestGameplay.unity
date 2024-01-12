@@ -740,7 +740,6 @@ GameObject:
   - component: {fileID: 359597597}
   - component: {fileID: 359597596}
   - component: {fileID: 359597595}
-  - component: {fileID: 359597598}
   m_Layer: 0
   m_Name: obs
   m_TagString: Untagged
@@ -801,12 +800,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
@@ -862,18 +861,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &359597598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359597593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf93b86930bf4aa4aa2d310fe073a90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &370973990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1100,6 @@ GameObject:
   - component: {fileID: 508033748}
   - component: {fileID: 508033747}
   - component: {fileID: 508033746}
-  - component: {fileID: 508033749}
   m_Layer: 0
   m_Name: obs2
   m_TagString: Untagged
@@ -1174,12 +1160,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
@@ -1235,18 +1221,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &508033749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508033744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf93b86930bf4aa4aa2d310fe073a90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dca99040f4fd44db431672727d258d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 10
+  maxMoveSpeed: 25
   smoothTime: 0.3
 --- !u!61 &694974649
 BoxCollider2D:
@@ -1944,6 +1918,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanity: 100
   score: 0
+  obstacleList:
+  - {fileID: 359597593}
+  - {fileID: 2086057996}
+  - {fileID: 508033744}
+  - {fileID: 1864183187}
 --- !u!50 &694974651
 Rigidbody2D:
   serializedVersion: 4
@@ -1961,7 +1940,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -3649,7 +3628,6 @@ GameObject:
   - component: {fileID: 1864183191}
   - component: {fileID: 1864183190}
   - component: {fileID: 1864183189}
-  - component: {fileID: 1864183192}
   m_Layer: 0
   m_Name: obs3
   m_TagString: Untagged
@@ -3710,12 +3688,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
@@ -3771,18 +3749,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1864183192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864183187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf93b86930bf4aa4aa2d310fe073a90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2005667426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,7 +3988,6 @@ GameObject:
   - component: {fileID: 2086058000}
   - component: {fileID: 2086057999}
   - component: {fileID: 2086057998}
-  - component: {fileID: 2086058001}
   m_Layer: 0
   m_Name: obs1
   m_TagString: Untagged
@@ -4083,12 +4048,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
@@ -4144,15 +4109,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2086058001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086057996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf93b86930bf4aa4aa2d310fe073a90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

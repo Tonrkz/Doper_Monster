@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public static PlayerMovement instance;
 
     bool isDrag = false;
-    [SerializeField] float maxMoveSpeed = 25;
+    [SerializeField] float maxMoveSpeed = 15;
     public float MaxMoveSpeed { get { return maxMoveSpeed; } set { maxMoveSpeed = value; } }
     [SerializeField] float smoothTime = 0.3f;
     Vector2 currentVelocity;
@@ -38,6 +38,18 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         yield return new WaitForSeconds(5);
         Debug.Log("Speed Down");
         maxMoveSpeed -= 25;
+    }
+
+    internal IEnumerator TempInvis(List<GameObject> obstacleList) {
+        Debug.Log("Invis");
+        foreach (var item in obstacleList) {
+            item.GetComponent<Rigidbody2D>().simulated = false;
+        }
+        yield return new WaitForSeconds(5);
+        foreach (var item in obstacleList) {
+            item.GetComponent<Rigidbody2D>().simulated = true;
+        }
+        Debug.Log("Uninvis");
     }
 
     public void OnPointerDown(PointerEventData eventData) {

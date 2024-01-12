@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour {
     public int Sanity { get { return sanity; } set { sanity = value; } }
     [SerializeField] int score = 0;
     public int Score { get { return score; } set { score = value; } }
+    [SerializeField] List<GameObject> obstacleList = new List<GameObject>();
 
     void Start() {
         instance = this;
@@ -34,6 +35,7 @@ public class PlayerManager : MonoBehaviour {
                     StartCoroutine(GetComponent<PlayerMovement>().TempSpeedUp());
                     break;
                 case DessertType.Invis:
+                    StartCoroutine(GetComponent<PlayerMovement>().TempInvis(obstacleList));
                     break;
             }
             Destroy(dessert.gameObject);

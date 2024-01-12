@@ -5,11 +5,11 @@ using UnityEngine;
 public enum DessertType {
     lowPoint,
     midPoint,
-    HighPoint,
-    Heal,
-    Damage,
-    Speed,
-    Invis
+    highPoint,
+    heal,
+    damage,
+    speed,
+    invis
 }
 
 public class DessertManager : MonoBehaviour {
@@ -17,17 +17,16 @@ public class DessertManager : MonoBehaviour {
     [SerializeField] int point = 0;
     public int Point { get { return point; } set { point = value; } }
     [SerializeField] DessertType type;
-    public DessertType Type { get { return type; } }
+    public DessertType Type { get { return type; } set { type = value; } }
     [SerializeField] float timeExists;
 
     void Start() {
-        SetupDessert(type);
     }
 
     void Update() {
     }
 
-    void SetupDessert(DessertType type) {
+    public void SetupDessert(DessertType type) {
         SpriteRenderer rdr = GetComponent<SpriteRenderer>();
         switch (type) {
             case DessertType.lowPoint:
@@ -38,23 +37,23 @@ public class DessertManager : MonoBehaviour {
                 rdr.color = new Color32(117, 255, 121, 255);
                 point = 7;
                 break;
-            case DessertType.HighPoint:
+            case DessertType.highPoint:
                 rdr.color = new Color32(43, 255, 49, 255);
                 point = 13;
                 break;
-            case DessertType.Heal:
+            case DessertType.heal:
                 rdr.color = new Color32(255, 118, 99, 255);
                 point = 5;
                 break;
-            case DessertType.Damage:
+            case DessertType.damage:
                 rdr.color = new Color32(85, 27, 171, 255);
                 point = 0;
                 break;
-            case DessertType.Speed:
+            case DessertType.speed:
                 rdr.color = new Color32(255, 255, 61, 255);
                 point = 2;
                 break;
-            case DessertType.Invis:
+            case DessertType.invis:
                 rdr.color = new Color32(0, 229, 255, 255);
                 point = 5;
                 break;

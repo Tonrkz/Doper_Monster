@@ -25,16 +25,16 @@ public class PlayerManager : MonoBehaviour {
             DessertManager dessert = collision.gameObject.GetComponent<DessertManager>();
             score += dessert.Point;
             switch (dessert.Type) {
-                case DessertType.Heal:
+                case DessertType.heal:
                     sanity += 5;
                     break;
-                case DessertType.Damage:
+                case DessertType.damage:
                     sanity -= 7;
                     break;
-                case DessertType.Speed:
+                case DessertType.speed:
                     StartCoroutine(GetComponent<PlayerMovement>().TempSpeedUp());
                     break;
-                case DessertType.Invis:
+                case DessertType.invis:
                     StartCoroutine(GetComponent<PlayerMovement>().TempInvis(obstacleList));
                     break;
             }

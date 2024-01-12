@@ -19,11 +19,20 @@ public class DessertManager : MonoBehaviour {
     [SerializeField] DessertType type;
     public DessertType Type { get { return type; } set { type = value; } }
     [SerializeField] float timeExists;
+    float expireTime = 0f;
 
     void Start() {
+        expireTime = Random.Range(3f, 5f);
+        StartCoroutine(ExpiringTime());
     }
 
     void Update() {
+    }
+
+    IEnumerator ExpiringTime() {
+        yield return new WaitForSeconds(expireTime);
+        PlayerManager.instance.Sanity -= 6;
+        Destroy(gameObject);
     }
 
     public void SetupDessert(DessertType type) {

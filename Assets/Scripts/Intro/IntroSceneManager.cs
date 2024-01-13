@@ -14,7 +14,7 @@ public class IntroSceneManager : MonoBehaviour {
     }
 
     void GoToMainMenu() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator WaitForLogo() {

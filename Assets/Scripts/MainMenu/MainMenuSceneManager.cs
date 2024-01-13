@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuSceneManager : MonoBehaviour {
     public void GoToStageSelection() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("StageSelection");
     }
 
     public void GameExit() {

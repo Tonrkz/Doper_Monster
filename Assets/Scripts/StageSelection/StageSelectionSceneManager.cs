@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StageSelectionSceneManager : MonoBehaviour {
     public void GotoTestStage() {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("TestGameplay");
     }
 
     public void GoToMainMenu() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 }

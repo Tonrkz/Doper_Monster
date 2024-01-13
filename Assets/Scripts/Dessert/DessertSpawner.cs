@@ -6,14 +6,25 @@ public class DessertSpawner : MonoBehaviour {
 
     [SerializeField] GameObject dessertPrefab;
 
+    public static DessertSpawner instance;
+    float expireTime = 0f;
+
+    private void Start() {
+        instance = this;
+        for (int i = 0 ; i < 5 ; i++) {
+            SpawnDessert();
+        }
+    }
+
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             SpawnDessert();
         }
     }
 
-    void SpawnDessert() {
+    internal void SpawnDessert() {
         GameObject dessert = Instantiate(dessertPrefab, new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.6f, 3.6f)), Quaternion.identity);
+        expireTime = Random.Range(3f, 5f);
 
         int type = Random.Range(1, 100);
         if (type >= 1 && type <= 50) {
@@ -44,6 +55,23 @@ public class DessertSpawner : MonoBehaviour {
             }
         }
 
+        StartCoroutine(ExpiringTime(dessert));
         dessert.GetComponent<DessertManager>().SetupDessert(dessert.GetComponent<DessertManager>().Type);
+    }
+
+    internal IEnumerator WaitToSpawnDessert() {
+        yield return new WaitForSeconds(Random.Range(1f, 3f));
+        SpawnDessert();
+    }
+
+    internal IEnumerator ExpiringTime(GameObject dessert) {
+        yield return new WaitForSeconds(expireTime);
+        if (dessert.GetComponent<DessertManager>() != null) {
+            if (dessert.GetComponent<DessertManager>().Type == DessertType.lowPoint || dessert.GetComponent<DessertManager>().Type == DessertType.midPoint || dessert.GetComponent<DessertManager>().Type == DessertType.highPoint) {
+                PlayerManager.instance.Sanity -= 6;
+            }
+            StartCoroutine(WaitToSpawnDessert());
+            Destroy(dessert.gameObject);
+        }
     }
 }

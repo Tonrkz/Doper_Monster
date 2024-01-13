@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public static PlayerMovement instance;
 
     bool isDrag = false;
-    [SerializeField] float maxMoveSpeed = 15;
+    [SerializeField] float maxMoveSpeed = 15f;
     public float MaxMoveSpeed { get { return maxMoveSpeed; } set { maxMoveSpeed = value; } }
     [SerializeField] float smoothTime = 0.3f;
     Vector2 currentVelocity;
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             //transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
         }
         if (maxMoveSpeed <= 0) {
-            maxMoveSpeed = 10f;
+            maxMoveSpeed = 15f;
         }
     }
 

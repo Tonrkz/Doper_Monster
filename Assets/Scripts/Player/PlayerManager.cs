@@ -17,7 +17,12 @@ public class PlayerManager : MonoBehaviour {
     }
 
     void Update() {
-
+        if (sanity > 100) {
+            sanity = 100;
+        }
+        if (sanity < 0) {
+            sanity = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -38,6 +43,7 @@ public class PlayerManager : MonoBehaviour {
                     StartCoroutine(GetComponent<PlayerMovement>().TempInvis(obstacleList));
                     break;
             }
+            StartCoroutine(DessertSpawner.instance.WaitToSpawnDessert());
             Destroy(dessert.gameObject);
         }
     }

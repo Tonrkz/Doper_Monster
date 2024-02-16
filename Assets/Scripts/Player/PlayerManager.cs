@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour {
     void Start() {
         instance = this;
         sanity = maxSanity;
+        Debug.Log(SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
     }
 
     void Update() {

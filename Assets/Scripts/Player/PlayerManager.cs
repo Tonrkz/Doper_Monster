@@ -7,7 +7,8 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager instance;
 
-    [SerializeField] int sanity = 100;
+    [SerializeField] int maxSanity;
+    int sanity;
     public int Sanity { get { return sanity; } set { sanity = value; } }
     [SerializeField] int score = 0;
     public int Score { get { return score; } set { score = value; } }
@@ -15,11 +16,12 @@ public class PlayerManager : MonoBehaviour {
 
     void Start() {
         instance = this;
+        sanity = maxSanity;
     }
 
     void Update() {
-        if (sanity > 100) {
-            sanity = 100;
+        if (sanity > maxSanity) {
+            sanity = maxSanity;
         }
         if (sanity < 0 || sanity == 0) {
             Debug.Log("Dead");

@@ -34,6 +34,10 @@ public class StageSelectionSceneManager : MonoBehaviour {
         SceneManager.LoadScene("EasyStage");
     }
 
+    public void GoToMediumStage() {
+        SceneManager.LoadScene("MediumStage");
+    }
+
     public void GoToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }

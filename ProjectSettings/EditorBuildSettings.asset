@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EasyStage.unity
     guid: d505ac40bdc0cb34b97876cd7a20cf34
   - enabled: 1
+    path: Assets/Scenes/MediumStage.unity
+    guid: 6049f007632c2f446a9ecc2fbb8da73c
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 577476b64193ba04f8688aada53d6825
   m_configObjects: {}

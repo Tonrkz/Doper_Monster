@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c544635d9652e4eaba43b9092365bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanity: 100
+  maxSanity: 50
   score: 0
   obstacleList:
   - {fileID: 359597593}

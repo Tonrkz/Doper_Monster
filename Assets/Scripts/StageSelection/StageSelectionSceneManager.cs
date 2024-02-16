@@ -8,6 +8,10 @@ public class StageSelectionSceneManager : MonoBehaviour {
         SceneManager.LoadScene("TestGameplay");
     }
 
+    public void GoToEasyStage() {
+        SceneManager.LoadScene("EasyStage");
+    }
+
     public void GoToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }

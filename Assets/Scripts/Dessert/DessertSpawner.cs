@@ -14,6 +14,7 @@ public class DessertSpawner : MonoBehaviour {
         for (int i = 0 ; i < 5 ; i++) {
             SpawnDessert();
         }
+        StartCoroutine(WaitToSpawnMoreDessert());
     }
 
     private void Update() {
@@ -62,6 +63,14 @@ public class DessertSpawner : MonoBehaviour {
     internal IEnumerator WaitToSpawnDessert() {
         yield return new WaitForSeconds(Random.Range(1f, 3f));
         SpawnDessert();
+    }
+
+    //The longer player lasts, The more dessert be spawned.
+    internal IEnumerator WaitToSpawnMoreDessert() {
+        while (true) {
+            yield return new WaitForSeconds(Random.Range(20, 27));
+            SpawnDessert();
+        }
     }
 
     internal IEnumerator ExpiringTime(GameObject dessert) {

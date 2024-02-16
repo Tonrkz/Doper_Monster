@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -22,6 +23,7 @@ public class PlayerManager : MonoBehaviour {
         }
         if (sanity < 0) {
             sanity = 0;
+            StartCoroutine(Dead());
         }
     }
 
@@ -46,5 +48,10 @@ public class PlayerManager : MonoBehaviour {
             StartCoroutine(DessertSpawner.instance.WaitToSpawnDessert());
             Destroy(dessert.gameObject);
         }
+    }
+
+    IEnumerator Dead() {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("GameOver");
     }
 }

@@ -21,7 +21,8 @@ public class PlayerManager : MonoBehaviour {
         if (sanity > 100) {
             sanity = 100;
         }
-        if (sanity < 0) {
+        if (sanity < 0 || sanity == 0) {
+            Debug.Log("Dead");
             sanity = 0;
             StartCoroutine(Dead());
         }
@@ -51,7 +52,14 @@ public class PlayerManager : MonoBehaviour {
     }
 
     IEnumerator Dead() {
+        Debug.Log("Coroutine(Dead());");
         yield return new WaitForSeconds(3f);
+        Debug.Log("Finished!");
+        PlayerPrefs.SetInt("Score", Score);
+        GoToGameOver();
+    }
+
+    void GoToGameOver() {
         SceneManager.LoadScene("GameOver");
     }
 }

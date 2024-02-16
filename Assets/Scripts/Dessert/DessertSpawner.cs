@@ -42,13 +42,13 @@ public class DessertSpawner : MonoBehaviour {
         }
         else {
             type = Random.Range(1, 100);
-            if (type >= 1 && type <= 50) {
+            if (type >= 1 && type <= 40) {
                 dessert.GetComponent<DessertManager>().Type = DessertType.damage;
             }
-            else if (type > 50 && type <= 80) {
+            else if (type > 40 && type <= 60) {
                 dessert.GetComponent<DessertManager>().Type = DessertType.heal;
             }
-            else if (type > 80 && type <= 90) {
+            else if (type > 60 && type <= 90) {
                 dessert.GetComponent<DessertManager>().Type = DessertType.speed;
             }
             else {

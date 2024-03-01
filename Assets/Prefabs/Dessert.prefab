@@ -129,7 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: 0
   type: 0
-  timeExists: 0
 --- !u!50 &580832518240351074
 Rigidbody2D:
   serializedVersion: 4

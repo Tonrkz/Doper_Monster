@@ -14,11 +14,10 @@ public enum DessertType {
 
 public class DessertManager : MonoBehaviour {
 
-    [SerializeField] int point = 0;
+    int point = 0;
     public int Point { get { return point; } set { point = value; } }
     [SerializeField] DessertType type;
     public DessertType Type { get { return type; } set { type = value; } }
-    [SerializeField] float timeExists;
 
     void Start() {
     }
@@ -26,20 +25,20 @@ public class DessertManager : MonoBehaviour {
     void Update() {
     }
 
-    public void SetupDessert(DessertType type) {
+    public void SetupDessert(DessertType type, int basePoint) {
         SpriteRenderer rdr = GetComponent<SpriteRenderer>();
         switch (type) {
             case DessertType.lowPoint:
                 rdr.color = new Color32(184, 255, 186, 255);
-                point = 3;
+                point = 3 + basePoint;
                 break;
             case DessertType.midPoint:
                 rdr.color = new Color32(117, 255, 121, 255);
-                point = 7;
+                point = 7 + basePoint;
                 break;
             case DessertType.highPoint:
                 rdr.color = new Color32(43, 255, 49, 255);
-                point = 13;
+                point = 13 + basePoint;
                 break;
             case DessertType.heal:
                 rdr.color = new Color32(255, 118, 99, 255);
@@ -55,7 +54,7 @@ public class DessertManager : MonoBehaviour {
                 break;
             case DessertType.invis:
                 rdr.color = new Color32(0, 229, 255, 255);
-                point = 5;
+                point = 4;
                 break;
         }
     }

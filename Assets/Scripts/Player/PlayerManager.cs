@@ -8,10 +8,19 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerManager instance;
 
     [SerializeField] int maxSanity;
+    public int MaxSanity { get { return maxSanity; } set { maxSanity = value; } }
     int sanity;
     public int Sanity { get { return sanity; } set { sanity = value; } }
+
     [SerializeField] int score = 0;
     public int Score { get { return score; } set { score = value; } }
+
+    int level = 1;
+    public int Level { get { return level; } set { level = value; } }
+
+    int currentTier = 1;
+    public int CurrentTier { get { return currentTier; } set { currentTier = value; } }
+
     [SerializeField] List<GameObject> obstacleList = new List<GameObject>();
 
     void Start() {

@@ -7,6 +7,16 @@ public class DessertSpawner : MonoBehaviour {
     [SerializeField] GameObject dessertPrefab;
 
     public static DessertSpawner instance;
+
+    int dessertBasePoint = 0;
+    public int DessertBasePoint { get { return dessertBasePoint; } set { dessertBasePoint = value; } }
+
+    float minExpireTime = 3f;
+    public float MinExpireTime { get { return minExpireTime; } set { minExpireTime = value; } }
+
+    float maxExpireTime = 5f;
+    public float MaxExpireTime { get { return maxExpireTime; } set { maxExpireTime = value; } }
+
     float expireTime = 0f;
 
     private void Start() {
@@ -25,7 +35,7 @@ public class DessertSpawner : MonoBehaviour {
 
     internal void SpawnDessert() {
         GameObject dessert = Instantiate(dessertPrefab, new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.6f, 3.6f)), Quaternion.identity);
-        expireTime = Random.Range(3f, 5f);
+        expireTime = Random.Range(minExpireTime, maxExpireTime);
 
         int type = Random.Range(1, 100);
         if (type >= 1 && type <= 50) {
@@ -57,7 +67,7 @@ public class DessertSpawner : MonoBehaviour {
         }
 
         StartCoroutine(ExpiringTime(dessert));
-        dessert.GetComponent<DessertManager>().SetupDessert(dessert.GetComponent<DessertManager>().Type);
+        dessert.GetComponent<DessertManager>().SetupDessert(dessert.GetComponent<DessertManager>().Type, dessertBasePoint);
     }
 
     internal IEnumerator WaitToSpawnDessert() {

@@ -21,13 +21,6 @@ public class PlayerUpgrade : MonoBehaviour {
     public int scoreRequired = 77;
     public int diff = 77;
 
-    public delegate void ActivateUpgrade();
-    ActivateUpgrade activateUpgradeI;
-    ActivateUpgrade activateUpgradeII;
-    ActivateUpgrade activateUpgradeIII;
-
-    List<ActivateUpgrade> upgradeList = new List<ActivateUpgrade>();
-
     void Start() {
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
@@ -51,6 +44,12 @@ public class PlayerUpgrade : MonoBehaviour {
         }
     }
 
+    void RemoveAllListenerFromAllButton() {
+        upgrade1.onClick.RemoveAllListeners();
+        upgrade2.onClick.RemoveAllListeners();
+        upgrade3.onClick.RemoveAllListeners();
+    }
+
     void RandomUpgrade() {
         diff = (int)(diff * 1.05);
         scoreRequired += diff;
@@ -72,26 +71,26 @@ public class PlayerUpgrade : MonoBehaviour {
                 while (firstUpgrade == secondUpgrade || firstUpgrade == thirdUpgrade || secondUpgrade == thirdUpgrade) {
                     firstUpgrade = Random.Range(1, 100);
                     if (firstUpgrade <= 70) {
-                        firstUpgrade = Random.Range(1, 3);
+                        firstUpgrade = Random.Range(1, 4);
                     }
                     else {
-                        firstUpgrade = Random.Range(4, 7);
+                        firstUpgrade = Random.Range(4, 8);
                     }
 
                     secondUpgrade = Random.Range(1, 100);
                     if (secondUpgrade <= 70) {
-                        secondUpgrade = Random.Range(1, 3);
+                        secondUpgrade = Random.Range(1, 4);
                     }
                     else {
-                        secondUpgrade = Random.Range(4, 7);
+                        secondUpgrade = Random.Range(4, 8);
                     }
 
                     thirdUpgrade = Random.Range(1, 100);
                     if (thirdUpgrade <= 70) {
-                        thirdUpgrade = Random.Range(1, 3);
+                        thirdUpgrade = Random.Range(1, 4);
                     }
                     else {
-                        thirdUpgrade = Random.Range(4, 7);
+                        thirdUpgrade = Random.Range(4, 8);
                     }
                 }
                 AssignUpgradeToList(firstUpgrade, secondUpgrade, thirdUpgrade);
@@ -104,33 +103,33 @@ public class PlayerUpgrade : MonoBehaviour {
                 while (firstUpgrade == secondUpgrade || firstUpgrade == thirdUpgrade || secondUpgrade == thirdUpgrade) {
                     firstUpgrade = Random.Range(1, 100);
                     if (firstUpgrade <= 50) {
-                        firstUpgrade = Random.Range(1, 3);
+                        firstUpgrade = Random.Range(1, 4);
                     }
                     else if (firstUpgrade > 50 && firstUpgrade <= 80) {
-                        firstUpgrade = Random.Range(4, 7);
+                        firstUpgrade = Random.Range(4, 8);
                     }
                     else {
-                        firstUpgrade = Random.Range(8, 12);
+                        firstUpgrade = Random.Range(8, 13);
                     }
                     secondUpgrade = Random.Range(1, 100);
                     if (secondUpgrade <= 50) {
-                        secondUpgrade = Random.Range(1, 3);
+                        secondUpgrade = Random.Range(1, 4);
                     }
                     else if (secondUpgrade > 50 && secondUpgrade <= 80) {
-                        secondUpgrade = Random.Range(4, 7);
+                        secondUpgrade = Random.Range(4, 8);
                     }
                     else {
-                        secondUpgrade = Random.Range(8, 12);
+                        secondUpgrade = Random.Range(8, 13);
                     }
                     thirdUpgrade = Random.Range(1, 100);
                     if (thirdUpgrade <= 50) {
-                        thirdUpgrade = Random.Range(1, 3);
+                        thirdUpgrade = Random.Range(1, 4);
                     }
                     else if (thirdUpgrade > 50 && thirdUpgrade <= 80) {
-                        thirdUpgrade = Random.Range(4, 7);
+                        thirdUpgrade = Random.Range(4, 8);
                     }
                     else {
-                        thirdUpgrade = Random.Range(8, 12);
+                        thirdUpgrade = Random.Range(8, 13);
                     }
                 }
                 AssignUpgradeToList(firstUpgrade, secondUpgrade, thirdUpgrade);
@@ -143,42 +142,42 @@ public class PlayerUpgrade : MonoBehaviour {
                 while (firstUpgrade == secondUpgrade || firstUpgrade == thirdUpgrade || secondUpgrade == thirdUpgrade) {
                     firstUpgrade = Random.Range(1, 100);
                     if (firstUpgrade <= 40) {
-                        firstUpgrade = Random.Range(1, 3);
+                        firstUpgrade = Random.Range(1, 4);
                     }
                     else if (firstUpgrade > 40 && firstUpgrade <= 70) {
-                        firstUpgrade = Random.Range(4, 7);
+                        firstUpgrade = Random.Range(4, 8);
                     }
                     else if (firstUpgrade > 70 && firstUpgrade <= 90) {
-                        firstUpgrade = Random.Range(8, 12);
+                        firstUpgrade = Random.Range(8, 13);
                     }
                     else {
-                        firstUpgrade = Random.Range(13, 16);
+                        firstUpgrade = Random.Range(13, 17);
                     }
                     secondUpgrade = Random.Range(1, 100);
                     if (secondUpgrade <= 40) {
-                        secondUpgrade = Random.Range(1, 3);
+                        secondUpgrade = Random.Range(1, 4);
                     }
                     else if (secondUpgrade > 40 && secondUpgrade <= 70) {
-                        secondUpgrade = Random.Range(4, 7);
+                        secondUpgrade = Random.Range(4, 8);
                     }
                     else if (secondUpgrade > 70 && secondUpgrade <= 90) {
-                        secondUpgrade = Random.Range(8, 12);
+                        secondUpgrade = Random.Range(8, 13);
                     }
                     else {
-                        secondUpgrade = Random.Range(13, 16);
+                        secondUpgrade = Random.Range(13, 17);
                     }
                     thirdUpgrade = Random.Range(1, 100);
                     if (thirdUpgrade <= 40) {
-                        thirdUpgrade = Random.Range(1, 3);
+                        thirdUpgrade = Random.Range(1, 4);
                     }
                     else if (thirdUpgrade > 40 && thirdUpgrade <= 70) {
-                        thirdUpgrade = Random.Range(4, 7);
+                        thirdUpgrade = Random.Range(4, 8);
                     }
                     else if (thirdUpgrade > 70 && thirdUpgrade <= 90) {
-                        thirdUpgrade = Random.Range(8, 12);
+                        thirdUpgrade = Random.Range(8, 13);
                     }
                     else {
-                        thirdUpgrade = Random.Range(13, 16);
+                        thirdUpgrade = Random.Range(13, 17);
                     }
                 }
                 AssignUpgradeToList(firstUpgrade, secondUpgrade, thirdUpgrade);
@@ -253,7 +252,7 @@ public class PlayerUpgrade : MonoBehaviour {
             case 12:
                 upgrade1.onClick.AddListener(TierIIIUpgrade05);
                 upgrade1Name.text = "Grow";
-                upgrade1Effect.text = "Ignore Rock, +Size, -Max Speed";
+                upgrade1Effect.text = "Ignore Rock, +Size, -1 Max Speed";
                 break;
             case 13:
                 upgrade1.onClick.AddListener(TierIVUpgrade01);
@@ -263,7 +262,7 @@ public class PlayerUpgrade : MonoBehaviour {
             case 14:
                 upgrade1.onClick.AddListener(TierIVUpgrade02);
                 upgrade1Name.text = "Careful";
-                upgrade1Effect.text = "Ignore Slow, -Max Speed";
+                upgrade1Effect.text = "Ignore Slow, -5 Max Speed";
                 break;
             case 15:
                 upgrade1.onClick.AddListener(TierIVUpgrade03);
@@ -273,7 +272,7 @@ public class PlayerUpgrade : MonoBehaviour {
             case 16:
                 upgrade1.onClick.AddListener(TierIVUpgrade04);
                 upgrade1Name.text = "Big Guy";
-                upgrade1Effect.text = "Ignore Soft Wall, +Size, -Max Speed";
+                upgrade1Effect.text = "Ignore Soft Wall, ++Size, -3 Max Speed";
                 break;
             default:
                 upgrade1.onClick.AddListener(TierIUpgrade01);
@@ -465,6 +464,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerManager.instance.MaxSanity -= 3;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIUpgrade02() {
@@ -473,6 +473,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerMovement.instance.MaxMoveSpeed -= 1;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIUpgrade03() {
@@ -480,6 +481,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerManager.instance.Sanity += (int)(PlayerManager.instance.MaxSanity * 0.15);
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIUpgrade01() {
@@ -487,6 +489,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerManager.instance.Sanity += (int)(PlayerManager.instance.MaxSanity * 0.3);
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIUpgrade02() {
@@ -494,6 +497,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerMovement.instance.MaxMoveSpeed += 1;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIUpgrade03() {
@@ -502,6 +506,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerMovement.instance.MaxMoveSpeed -= 1;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIUpgrade04() {
@@ -509,6 +514,7 @@ public class PlayerUpgrade : MonoBehaviour {
         DessertSpawner.instance.DessertBasePoint += 1;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIIUpgrade01() {
@@ -517,6 +523,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerManager.instance.MaxSanity -= 5;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIIUpgrade02() {
@@ -525,6 +532,7 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerMovement.instance.MaxMoveSpeed -= 2;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIIUpgrade03() {
@@ -533,6 +541,7 @@ public class PlayerUpgrade : MonoBehaviour {
         DessertSpawner.instance.MaxExpireTime += 0.1f;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIIUpgrade04() {
@@ -540,12 +549,23 @@ public class PlayerUpgrade : MonoBehaviour {
         DessertSpawner.instance.DessertBasePoint += 2;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIIIUpgrade05() {
         //Ignore rock, +Size, -maxSpeed (Tier 3)
+        foreach (var item in PlayerManager.instance.obstacleList) {
+            if (item.tag == "Rock") {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), item.GetComponent<BoxCollider2D>(), true);
+            }
+        }
+        if (transform.localScale.x <= 0.13f) {
+            transform.localScale = new Vector3(0.13f, 0.13f, 0.13f);
+        }
+        PlayerMovement.instance.MaxMoveSpeed -= 1;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIVUpgrade01() {
@@ -554,12 +574,20 @@ public class PlayerUpgrade : MonoBehaviour {
         PlayerManager.instance.MaxSanity -= 6;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIVUpgrade02() {
         //Ignore slow, -maxSpeed (Tier 4)
+        foreach (var item in PlayerManager.instance.obstacleList) {
+            if (item.tag == "SlowFloor") {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), item.GetComponent<BoxCollider2D>(), true);
+            }
+        }
+        PlayerMovement.instance.MaxMoveSpeed -= 5;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIVUpgrade03() {
@@ -568,11 +596,22 @@ public class PlayerUpgrade : MonoBehaviour {
         DessertSpawner.instance.MaxExpireTime += 0.2f;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 
     public void TierIVUpgrade04() {
         //Ignore softWall, ++Size, --maxSpeed (Tier 4)
+        foreach (var item in PlayerManager.instance.obstacleList) {
+            if (item.tag == "SoftWall") {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), item.GetComponent<BoxCollider2D>(), true);
+            }
+        }
+        if (transform.localScale.x < 0.16f) {
+            transform.localScale = new Vector3(0.16f, 0.16f, 0.16f);
+        }
+        PlayerMovement.instance.MaxMoveSpeed -= 3;
         upgradePanel.SetActive(false);
         Time.timeScale = 1f;
+        RemoveAllListenerFromAllButton();
     }
 }

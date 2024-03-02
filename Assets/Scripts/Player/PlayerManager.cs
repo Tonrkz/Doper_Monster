@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour {
     int currentTier = 1;
     public int CurrentTier { get { return currentTier; } set { currentTier = value; } }
 
-    [SerializeField] List<GameObject> obstacleList = new List<GameObject>();
+    [SerializeField] internal List<GameObject> obstacleList = new List<GameObject>();
 
     void Start() {
         instance = this;

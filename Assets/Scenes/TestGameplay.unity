@@ -3307,7 +3307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &694974646
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5168,6 +5168,10 @@ GameObject:
   - component: {fileID: 1279776400}
   - component: {fileID: 1279776399}
   - component: {fileID: 1279776398}
+  - component: {fileID: 1279776404}
+  - component: {fileID: 1279776403}
+  - component: {fileID: 1279776402}
+  - component: {fileID: 1279776401}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5257,12 +5261,83 @@ Transform:
   m_GameObject: {fileID: 1279776397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.115, y: 0.115, z: 0.115}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279776401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279776397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44d6ab5a44829947a8856eb7b2386e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanel: {fileID: 2068583705}
+  upgrade1: {fileID: 1661162486}
+  upgrade1Name: {fileID: 144088233}
+  upgrade1Effect: {fileID: 844871334}
+  upgrade2: {fileID: 1890644289}
+  upgrade2Name: {fileID: 45951075}
+  upgrade2Effect: {fileID: 1148175125}
+  upgrade3: {fileID: 921606399}
+  upgrade3Name: {fileID: 537546433}
+  upgrade3Effect: {fileID: 61384602}
+  scoreRequired: 77
+  diff: 77
+--- !u!114 &1279776402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279776397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dca99040f4fd44db431672727d258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMoveSpeed: 10
+  smoothTime: 0.3
+--- !u!114 &1279776403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279776397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c544635d9652e4eaba43b9092365bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSanity: 50
+  score: 0
+  obstacleList:
+  - {fileID: 359597593}
+  - {fileID: 2086057996}
+  - {fileID: 508033744}
+  - {fileID: 1864183187}
+--- !u!114 &1279776404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279776397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a412131a6fcd13e458366cce19b206d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sanityBarSlider: {fileID: 1688818248}
+  easeSanityBarSlider: {fileID: 1525756844}
 --- !u!1 &1343182048
 GameObject:
   m_ObjectHideFlags: 0
@@ -8187,7 +8262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2061813983
 MonoBehaviour:
   m_ObjectHideFlags: 0

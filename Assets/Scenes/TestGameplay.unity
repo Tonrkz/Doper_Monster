@@ -1758,8 +1758,8 @@ GameObject:
   - component: {fileID: 359597596}
   - component: {fileID: 359597595}
   m_Layer: 0
-  m_Name: obs
-  m_TagString: Untagged
+  m_Name: HardWall1
+  m_TagString: HardWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2329,8 +2329,8 @@ GameObject:
   - component: {fileID: 508033747}
   - component: {fileID: 508033746}
   m_Layer: 0
-  m_Name: obs2
-  m_TagString: Untagged
+  m_Name: SoftWall1
+  m_TagString: SoftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5444,7 +5444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43dca99040f4fd44db431672727d258d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 10
+  maxMoveSpeed: 7
   smoothTime: 0.3
 --- !u!114 &1279776403
 MonoBehaviour:
@@ -5539,8 +5539,8 @@ GameObject:
   - component: {fileID: 1307994540}
   - component: {fileID: 1307994539}
   m_Layer: 0
-  m_Name: obs3 (1)
-  m_TagString: Untagged
+  m_Name: Rock1
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7689,8 +7689,8 @@ GameObject:
   - component: {fileID: 1864183190}
   - component: {fileID: 1864183189}
   m_Layer: 0
-  m_Name: obs3
-  m_TagString: Untagged
+  m_Name: SoftWall2
+  m_TagString: SoftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9121,11 +9121,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2086057997}
   - component: {fileID: 2086058000}
+  - component: {fileID: 2086058001}
   - component: {fileID: 2086057999}
   - component: {fileID: 2086057998}
   m_Layer: 0
-  m_Name: obs1
-  m_TagString: Untagged
+  m_Name: SlowFloor
+  m_TagString: SlowFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9155,7 +9156,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9232,7 +9233,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0.87339497, a: 1}
   m_FlipX: 0
@@ -9244,6 +9245,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2086058001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086057996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8ad8f1d3e0e63468c913fdddea2197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &580832517913452299
 PrefabInstance:
   m_ObjectHideFlags: 0

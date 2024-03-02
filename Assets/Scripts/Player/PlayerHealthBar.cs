@@ -17,6 +17,8 @@ public class PlayerHealthBar : MonoBehaviour {
     }
 
     private void Update() {
+        sanityBarSlider.maxValue = PlayerManager.instance.MaxSanity;
+        easeSanityBarSlider.maxValue = sanityBarSlider.maxValue;
         if (sanityBarSlider.value != GetComponent<PlayerManager>().Sanity) {
             sanityBarSlider.value = GetComponent<PlayerManager>().Sanity;
         }

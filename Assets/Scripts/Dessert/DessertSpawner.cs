@@ -6,6 +6,8 @@ public class DessertSpawner : MonoBehaviour {
 
     [SerializeField] GameObject dessertPrefab;
 
+    [SerializeField] GameObject dessertShadowPrefab;
+
     [SerializeField] GameObject demonPrefab;
 
     public static DessertSpawner instance;
@@ -70,6 +72,7 @@ public class DessertSpawner : MonoBehaviour {
 
         StartCoroutine(ExpiringTime(dessert));
         dessert.GetComponent<DessertManager>().SetupDessert(dessert.GetComponent<DessertManager>().Type, dessertBasePoint);
+        Instantiate(dessertShadowPrefab, dessert.transform, false);
     }
 
     internal IEnumerator WaitToSpawnDessert() {

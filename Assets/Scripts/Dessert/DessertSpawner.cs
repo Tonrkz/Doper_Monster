@@ -6,6 +6,8 @@ public class DessertSpawner : MonoBehaviour {
 
     [SerializeField] GameObject dessertPrefab;
 
+    [SerializeField] GameObject demonPrefab;
+
     public static DessertSpawner instance;
 
     int dessertBasePoint = 0;
@@ -90,8 +92,13 @@ public class DessertSpawner : MonoBehaviour {
                 PlayerManager.instance.playerAnimator.SetTrigger("hurt");
                 PlayerManager.instance.Sanity -= 6;
             }
+            Destroy(dessert.gameObject.GetComponent<PolygonCollider2D>());
+            GameObject demon = Instantiate(demonPrefab, new Vector3(dessert.transform.position.x, dessert.transform.position.y + 0.5f, dessert.transform.position.z), Quaternion.identity);
+            yield return new WaitUntil(() => demon.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f);
             StartCoroutine(WaitToSpawnDessert());
             Destroy(dessert.gameObject);
+            yield return new WaitUntil(() => demon.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Demon_Hand_Stop"));
+            Destroy(demon.gameObject);
         }
     }
 }

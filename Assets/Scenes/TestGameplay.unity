@@ -8724,6 +8724,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 404067339979822856, guid: 23c0836db98c2104dac1f28b102f7427, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 404067339979822857, guid: 23c0836db98c2104dac1f28b102f7427, type: 3}
       propertyPath: m_Name
       value: StageSoundManager

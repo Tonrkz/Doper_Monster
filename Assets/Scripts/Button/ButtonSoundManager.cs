@@ -6,6 +6,8 @@ public class ButtonSoundManager : MonoBehaviour {
 
     [SerializeField] AudioSource buttonClickSFX;
 
+    [SerializeField] AudioSource mainMenuBGM;
+
 
     private static ButtonSoundManager instance = null;
     public static ButtonSoundManager Instance {
@@ -20,6 +22,14 @@ public class ButtonSoundManager : MonoBehaviour {
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void PlayMainMenuBGM() {
+        mainMenuBGM.Play();
+    }
+
+    public void StopMainMenuBGM() {
+        mainMenuBGM.Stop();
     }
 
     public void ButtonClickSFX() {

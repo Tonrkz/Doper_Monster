@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuSceneManager : MonoBehaviour {
+    private void Awake() {
+        GameObject.FindGameObjectWithTag("ButtonSound").GetComponent<ButtonSoundManager>().PlayMainMenuBGM();
+    }
+
     public void GoToStageSelection() {
         SceneManager.LoadScene("StageSelection");
     }

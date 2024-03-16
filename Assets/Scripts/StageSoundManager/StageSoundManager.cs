@@ -6,6 +6,10 @@ public class StageSoundManager : MonoBehaviour {
 
     [SerializeField] AudioSource backgroundMusic;
 
+    private void Awake() {
+        GameObject.FindGameObjectWithTag("ButtonSound").GetComponent<ButtonSoundManager>().StopMainMenuBGM();
+    }
+
     public void BackgroundMusic() {
         backgroundMusic.Play();
     }

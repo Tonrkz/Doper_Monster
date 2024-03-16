@@ -589,7 +589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CANDY MONSTER
+  m_text: DOPER MONSTER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbaf7d9ed5f6c1d4495b91d25114ff9d, type: 2}
   m_sharedMaterial: {fileID: -7282831242450345811, guid: dbaf7d9ed5f6c1d4495b91d25114ff9d, type: 2}

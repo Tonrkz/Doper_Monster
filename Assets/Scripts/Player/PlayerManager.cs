@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour {
         if (collision.gameObject.GetComponent<DessertManager>() != null) {
             DessertManager dessert = collision.gameObject.GetComponent<DessertManager>();
             score += dessert.Point;
-            PlayerSoundManager.instance.EatingSFX();
+            PlayerSoundManager.instance.PlayEatingSFX();
             switch (dessert.Type) {
                 case DessertType.heal:
                     sanity += 5;
@@ -76,7 +76,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     IEnumerator Dead() {
-        PlayerSoundManager.instance.DeathSFX();
+        PlayerSoundManager.instance.PlayDeathSFX();
         playerAnimator.SetBool("isDead", true);
         Debug.Log("Coroutine(Dead());");
         yield return new WaitForSeconds(3f);

@@ -7,16 +7,21 @@ public class PlayerSoundManager : MonoBehaviour {
     public static PlayerSoundManager instance;
     [SerializeField] AudioSource eatingSFX;
     [SerializeField] AudioSource deathSFX;
+    [SerializeField] AudioSource whooshSFX;
 
     void Start() {
         instance = this;
     }
 
-    public void DeathSFX() {
+    public void PlayWhooshSFX() {
+        whooshSFX.Play();
+    }
+
+    public void PlayDeathSFX() {
         deathSFX.Play();
     }
 
-    public void EatingSFX() {
+    public void PlayEatingSFX() {
         eatingSFX.Play();
     }
 }

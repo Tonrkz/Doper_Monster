@@ -17,13 +17,15 @@ public class SlowFloor : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if (slowedMaxSpeed * 2 != collision.GetComponent<PlayerMovement>().MaxMoveSpeed) {
-            maxSpeedEnter += collision.GetComponent<PlayerMovement>().MaxMoveSpeed - slowedMaxSpeed;
-            Debug.Log("Not Equal" + maxSpeedEnter);
-            collision.GetComponent<PlayerMovement>().MaxMoveSpeed = maxSpeedEnter;
-        }
-        else {
-            collision.GetComponent<PlayerMovement>().MaxMoveSpeed = maxSpeedEnter;
+        if (collision.GetComponent<PlayerMovement>() != null) {
+            if (slowedMaxSpeed * 2 != collision.GetComponent<PlayerMovement>().MaxMoveSpeed) {
+                maxSpeedEnter += collision.GetComponent<PlayerMovement>().MaxMoveSpeed - slowedMaxSpeed;
+                Debug.Log("Not Equal" + maxSpeedEnter);
+                collision.GetComponent<PlayerMovement>().MaxMoveSpeed = maxSpeedEnter;
+            }
+            else {
+                collision.GetComponent<PlayerMovement>().MaxMoveSpeed = maxSpeedEnter;
+            }
         }
     }
 }

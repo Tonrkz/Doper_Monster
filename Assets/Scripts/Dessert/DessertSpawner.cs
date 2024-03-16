@@ -98,6 +98,7 @@ public class DessertSpawner : MonoBehaviour {
             Destroy(dessert.gameObject.GetComponent<PolygonCollider2D>());
             GameObject demon = Instantiate(demonPrefab, new Vector3(dessert.transform.position.x, dessert.transform.position.y + 0.5f, dessert.transform.position.z), Quaternion.identity);
             yield return new WaitUntil(() => demon.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f);
+            PlayerSoundManager.instance.PlayWhooshSFX();
             StartCoroutine(WaitToSpawnDessert());
             Destroy(dessert.gameObject);
             yield return new WaitUntil(() => demon.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Demon_Hand_Stop"));

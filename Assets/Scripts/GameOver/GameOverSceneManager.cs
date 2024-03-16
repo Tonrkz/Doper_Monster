@@ -34,6 +34,7 @@ public class GameOverSceneManager : MonoBehaviour {
         else if (PlayerPrefs.GetString("LastLevel") == "HardStage") {
             if (PlayerPrefs.GetInt("HardHighScore") < PlayerPrefs.GetInt("Score")) {
                 highScoreText.text = "New High Score!";
+                PlayerPrefs.SetInt("HardHighScore", PlayerPrefs.GetInt("Score"));
             }
             else {
                 highScoreText.text = "";
@@ -47,5 +48,8 @@ public class GameOverSceneManager : MonoBehaviour {
 
     public void GoToMainMenu() {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void ButtonOnClickSFX() {
+        GameObject.FindGameObjectWithTag("ButtonSound").GetComponent<ButtonSoundManager>().ButtonClickSFX();
     }
 }

@@ -12150,14 +12150,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5795362809350049176, guid: 47eef5464c7227145940ab19b139ab73, type: 3}
-      propertyPath: Mute
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5795362809350049176, guid: 47eef5464c7227145940ab19b139ab73, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7142113581295195528, guid: 47eef5464c7227145940ab19b139ab73, type: 3}
       propertyPath: obstacleList.Array.size
       value: 17

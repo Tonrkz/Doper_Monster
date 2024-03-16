@@ -23,6 +23,8 @@ public class PlayerManager : MonoBehaviour {
 
     [SerializeField] internal List<GameObject> obstacleList = new List<GameObject>();
 
+    byte num = 0;
+
     internal Animator playerAnimator;
 
     void Start() {
@@ -40,7 +42,10 @@ public class PlayerManager : MonoBehaviour {
         if (sanity < 0 || sanity == 0) {
             Debug.Log("Dead");
             sanity = 0;
-            StartCoroutine(Dead());
+            if (num < 1) {
+                StartCoroutine(Dead());
+                num++;
+            }
         }
     }
 
@@ -71,6 +76,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     IEnumerator Dead() {
+        PlayerSoundManager.instance.DeathSFX();
         playerAnimator.SetBool("isDead", true);
         Debug.Log("Coroutine(Dead());");
         yield return new WaitForSeconds(3f);

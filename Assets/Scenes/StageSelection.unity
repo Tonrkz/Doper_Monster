@@ -565,6 +565,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: ButtonOnClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &766081754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +845,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: ButtonOnClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1139622405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +994,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1024651459}
         m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
         m_MethodName: GotoTestStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: ButtonOnClickSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1252,6 +1288,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1024651459}
         m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
         m_MethodName: GoToMediumStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: ButtonOnClickSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1969,7 +2017,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1806734464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: GoToHardStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1024651459}
+        m_TargetAssemblyTypeName: StageSelectionSceneManager, Assembly-CSharp
+        m_MethodName: ButtonOnClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2094105233
 MonoBehaviour:
   m_ObjectHideFlags: 0

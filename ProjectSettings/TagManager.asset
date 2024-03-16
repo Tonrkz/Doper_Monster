@@ -8,6 +8,7 @@ TagManager:
   - HardWall
   - Rock
   - SlowFloor
+  - ButtonSound
   layers:
   - Default
   - TransparentFX

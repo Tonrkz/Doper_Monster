@@ -26,6 +26,10 @@ public class StageSelectionSceneManager : MonoBehaviour {
         hardHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("HardHighScore");
     }
 
+    public void ButtonOnClickSFX() {
+        GameObject.FindGameObjectWithTag("ButtonSound").GetComponent<ButtonSoundManager>().ButtonClickSFX();
+    }
+
     public void GotoTestStage() {
         SceneManager.LoadScene("TestGameplay");
     }
@@ -36,6 +40,10 @@ public class StageSelectionSceneManager : MonoBehaviour {
 
     public void GoToMediumStage() {
         SceneManager.LoadScene("MediumStage");
+    }
+
+    public void GoToHardStage() {
+        SceneManager.LoadScene("HardStage");
     }
 
     public void GoToMainMenu() {

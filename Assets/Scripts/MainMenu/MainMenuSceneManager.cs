@@ -8,6 +8,10 @@ public class MainMenuSceneManager : MonoBehaviour {
         SceneManager.LoadScene("StageSelection");
     }
 
+    public void ButtonOnClickSFX() {
+        GameObject.FindGameObjectWithTag("ButtonSound").GetComponent<ButtonSoundManager>().ButtonClickSFX();
+    }
+
     public void GameExit() {
         Application.Quit();
     }

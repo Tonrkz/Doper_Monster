@@ -581,7 +581,7 @@ public class PlayerUpgrade : MonoBehaviour {
         //Ignore slow, -maxSpeed (Tier 4)
         foreach (var item in PlayerManager.instance.obstacleList) {
             if (item.tag == "SlowFloor") {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), item.GetComponent<BoxCollider2D>(), true);
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), item.GetComponent<Collider2D>(), true);
             }
         }
         PlayerMovement.instance.MaxMoveSpeed -= 5;

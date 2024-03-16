@@ -23,11 +23,14 @@ public class PlayerManager : MonoBehaviour {
 
     [SerializeField] internal List<GameObject> obstacleList = new List<GameObject>();
 
+    internal Animator playerAnimator;
+
     void Start() {
         instance = this;
         sanity = maxSanity;
         Debug.Log(SceneManager.GetActiveScene().name);
         PlayerPrefs.SetString("LastLevel", SceneManager.GetActiveScene().name);
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -50,6 +53,7 @@ public class PlayerManager : MonoBehaviour {
                     sanity += 5;
                     break;
                 case DessertType.damage:
+                    PlayerManager.instance.playerAnimator.SetTrigger("hurt");
                     sanity -= 7;
                     break;
                 case DessertType.speed:
@@ -57,6 +61,7 @@ public class PlayerManager : MonoBehaviour {
                     break;
                 case DessertType.invis:
                     StartCoroutine(GetComponent<PlayerMovement>().TempInvis(obstacleList));
+                    StopCoroutine(GetComponent<PlayerMovement>().TempInvis(obstacleList));
                     break;
             }
             StartCoroutine(DessertSpawner.instance.WaitToSpawnDessert());
@@ -65,6 +70,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     IEnumerator Dead() {
+        PlayerManager.instance.playerAnimator.SetBool("isDead", true);
         Debug.Log("Coroutine(Dead());");
         yield return new WaitForSeconds(3f);
         Debug.Log("Finished!");

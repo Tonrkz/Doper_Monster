@@ -28,7 +28,13 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             //transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
         }
         if (maxMoveSpeed <= 0) {
-            maxMoveSpeed = 10f;
+            maxMoveSpeed = 7f;
+        }
+        if (PlayerManager.instance.playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Player_Walk")) {
+            PlayerManager.instance.playerAnimator.speed = currentVelocity.magnitude / maxMoveSpeed;
+        }
+        else {
+            PlayerManager.instance.playerAnimator.speed = 1;
         }
     }
 
@@ -42,6 +48,7 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     internal IEnumerator TempInvis(List<GameObject> obstacleList) {
         Debug.Log("Invis");
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 128);
         foreach (var item in obstacleList) {
             item.GetComponent<Rigidbody2D>().simulated = false;
         }
@@ -50,9 +57,11 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             item.GetComponent<Rigidbody2D>().simulated = true;
         }
         Debug.Log("Uninvis");
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
     }
 
     public void OnPointerDown(PointerEventData eventData) {
+        PlayerManager.instance.playerAnimator.SetTrigger("grab");
         Debug.Log("Clicked");
     }
 
@@ -62,11 +71,13 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnDrag(PointerEventData eventData) {
         isDrag = true;
+        PlayerManager.instance.playerAnimator.SetBool("isWalking", true);
         Debug.Log("Dragged");
     }
 
     public void OnEndDrag(PointerEventData eventData) {
         isDrag = false;
+        PlayerManager.instance.playerAnimator.SetBool("isWalking", false);
         Debug.Log("Undragged");
     }
 }

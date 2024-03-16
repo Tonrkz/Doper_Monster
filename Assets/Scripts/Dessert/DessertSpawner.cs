@@ -87,6 +87,7 @@ public class DessertSpawner : MonoBehaviour {
         yield return new WaitForSeconds(expireTime);
         if (dessert.GetComponent<DessertManager>() != null) {
             if (dessert.GetComponent<DessertManager>().Type == DessertType.lowPoint || dessert.GetComponent<DessertManager>().Type == DessertType.midPoint || dessert.GetComponent<DessertManager>().Type == DessertType.highPoint) {
+                PlayerManager.instance.playerAnimator.SetTrigger("hurt");
                 PlayerManager.instance.Sanity -= 6;
             }
             StartCoroutine(WaitToSpawnDessert());

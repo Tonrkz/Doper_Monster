@@ -19,12 +19,6 @@ public class DessertManager : MonoBehaviour {
     [SerializeField] DessertType type;
     public DessertType Type { get { return type; } set { type = value; } }
 
-    void Start() {
-    }
-
-    void Update() {
-    }
-
     public void SetupDessert(DessertType type, int basePoint) {
         SpriteRenderer rdr = GetComponent<SpriteRenderer>();
         switch (type) {

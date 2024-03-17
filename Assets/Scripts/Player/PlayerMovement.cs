@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             rb.MovePosition(Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed));
             //rb.MovePosition(new Vector2(transform.position.x, transform.position.y) + mousePosition * maxMoveSpeed * Time.deltaTime);
             //transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
+            if (mousePosition.x - transform.position.x < 0) {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
         if (maxMoveSpeed <= 0) {
             maxMoveSpeed = 7f;

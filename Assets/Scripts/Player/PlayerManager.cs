@@ -76,6 +76,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     IEnumerator Dead() {
+        GetComponent<SpriteRenderer>().flipX = false;
         PlayerSoundManager.instance.PlayDeathSFX();
         playerAnimator.SetBool("isDead", true);
         Debug.Log("Coroutine(Dead());");

@@ -15,10 +15,10 @@ public class DessertSpawner : MonoBehaviour {
     int dessertBasePoint = 0;
     public int DessertBasePoint { get { return dessertBasePoint; } set { dessertBasePoint = value; } }
 
-    float minExpireTime = 3f;
+    float minExpireTime = 3.3f;
     public float MinExpireTime { get { return minExpireTime; } set { minExpireTime = value; } }
 
-    float maxExpireTime = 5f;
+    float maxExpireTime = 5.3f;
     public float MaxExpireTime { get { return maxExpireTime; } set { maxExpireTime = value; } }
 
     float expireTime = 0f;
